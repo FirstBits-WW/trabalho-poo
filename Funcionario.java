@@ -12,10 +12,11 @@ public abstract class Funcionario implements IFuncionario{
                 + salarioFixo ;
     }
 
-    public Funcionario(String nome, int matricula, int idade) {
+    public Funcionario(String nome, int matricula, int idade, double salarioFixo) {
         this.nome = nome;
         this.matricula = matricula;
         this.idade = idade;
+        this.salarioFixo = salarioFixo;
     }
 
     @Override

@@ -1,6 +1,6 @@
 public class Atendente extends Funcionario {
 
-    protected int horasTrabalhadas;
+    protected double horasTrabalhadas;
 
     
     
@@ -12,12 +12,12 @@ public class Atendente extends Funcionario {
                 + "\n idade:" + idade;
     }
 
-    public Atendente(String nome, int matricula, int idade, int horasTrabalhadas) {
-        super(nome, matricula, idade);
+    public Atendente(String nome, int matricula, int idade, double horasTrabalhadas, double salarioFixo) {
+        super(nome, matricula, idade, salarioFixo);
         this.horasTrabalhadas = horasTrabalhadas;
     }
     
-    public int getHorasTrabalhadas() {
+    public double getHorasTrabalhadas() {
         return horasTrabalhadas;
     }
 

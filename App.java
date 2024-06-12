@@ -1,12 +1,22 @@
+
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         final Scanner scannerKeybord = new Scanner(System.in);
-        LoginSenha.Logar(scannerKeybord);
+        String[] LogSen = LoginSenha.Logar(scannerKeybord);
+        String Login = LogSen[0];
+       // String Senha = LogSen[1];
+        boolean ingressoVendido = false;
+
 
         Carrinho carrinhoDoCliente = new Carrinho();
         System.out.println("Carrinho criado!");
+        ClienteVip clienteVipTeste = new ClienteVip(Login, carrinhoDoCliente, true);
+        System.out.println("Cliente teste instânciado!");
+        Sessao filmeTeste = new Sessao(30);     
+        System.out.println("filme teste criado!");
+        Ingresso ingresso = null;
 
         System.out.println("----------------Bem vindo ao cinema (nome do cinema)!----------------");
         System.out.println("oque desejas fazer?");
@@ -19,6 +29,8 @@ public class App {
             System.out.println("3) Adicionar Refrigerante ao carrinho ");
             System.out.println("4) checar o carrinho");
             System.out.println("5) esvaziar o carrinho");
+            System.out.println("6) comprar ingresso");
+            System.out.println("7) checar preço do ingresso");
 
             System.out.println("0) Sair");
 
@@ -53,6 +65,23 @@ public class App {
                     carrinhoDoCliente.esvaziarCarrinho();
                     System.out.println("Carrinho esvaziado!!!!");
                     break;
+                case "6":
+                System.out.println("------------ Processando seu ingresso ------------");
+                    if (ingressoVendido == false) {
+                        ingresso =  new Ingresso(50.00);
+                        ingresso.venderIngresso(filmeTeste, clienteVipTeste);
+                        System.out.println("O valor do ingresso é: " + ingresso.getValorIngresso() + "R$ ");
+                        ingressoVendido = true;
+    
+                    }else{
+                        System.out.println("Você já comprou 1 ingresso!!!");
+                    }
+
+                    break;
+                case "7":
+                System.out.println("O valor do ingresso é: " + ingresso.getValorIngresso() + "R$ ");
+                    break;
+
 
             }
         } while (!opcao.equals("0"));

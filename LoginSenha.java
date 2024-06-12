@@ -3,7 +3,8 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class LoginSenha {
-    public static void Logar(Scanner scannerKeybord) throws Exception {
+    
+    public static String[] Logar(Scanner scannerKeybord) throws Exception {
         String loginString;
         String senhaString;
         FileWriter loginESenha = new FileWriter("LoginESenha.txt", false);
@@ -13,10 +14,13 @@ public class LoginSenha {
         System.out.println("por favor, digite sua senha");
         senhaString = scannerKeybord.nextLine();
 
+        String[] LogSen = new String[2];
+
         loginESenha.write(loginString);
         loginESenha.write("\n");
         loginESenha.write(senhaString);
         loginESenha.close();
+
 
 
         File file = new File("LoginESenha.txt");
@@ -29,6 +33,7 @@ public class LoginSenha {
         }
         
         scannerArquivo.close();
+        return LogSen;
 
     }
 

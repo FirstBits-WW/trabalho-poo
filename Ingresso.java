@@ -4,7 +4,16 @@ import java.time.LocalDateTime;
 
 
 public class Ingresso {
- public static double valorIngresso;
+
+
+
+
+ public double valorIngresso;
+ public Ingresso(double valorIngresso){
+    this.valorIngresso = valorIngresso;
+
+ }
+
 
  public void venderIngresso(Sessao sessao,Funcionario funcionario) throws SessaoComecouException {
     if(sessao.getNumeroDeAcentos()>0){
@@ -46,7 +55,7 @@ public class Ingresso {
 }
  }
 
-public static double getValorIngresso() {
+public double getValorIngresso() {
     return valorIngresso;
 }
 

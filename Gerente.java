@@ -7,8 +7,8 @@ public class Gerente extends Funcionario {
   
 
 
-    public Gerente(ArrayList<Atendente> atendentes, String nome, int matricula, int idade) {
-        super(nome, matricula, idade);
+    public Gerente(ArrayList<Atendente> atendentes, String nome, int matricula, int idade, double salarioFixo) {
+        super(nome, matricula, idade, salarioFixo );
         this.atendentes = atendentes;
     }
 
